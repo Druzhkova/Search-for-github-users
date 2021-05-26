@@ -1,6 +1,4 @@
 {
-  "homepage": "https://druzhkova.github.io/search-for-github-users",
-  "name": "search-for-github-users",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,8 +21,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -61,7 +57,6 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^18.2.1",
-    "gh-pages": "^3.1.0"
+    "eslint-config-airbnb": "^18.2.1"
   }
 }
