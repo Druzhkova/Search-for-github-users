@@ -21,13 +21,7 @@ export const Main = ({
         : (
           <Repositories>
             <Title>
-              Repositories
-              {' '}
-              <span>
-                (
-                {data.public_repos}
-                )
-              </span>
+              {`Repositories ${data.public_repos}`}
             </Title>
             {children}
           </Repositories>

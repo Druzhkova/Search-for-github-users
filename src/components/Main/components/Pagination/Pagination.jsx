@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { createPages } from '../../../../utils/createPages';
-import { getCurrentPage, getListRepositoriesRequest } from '../../../../actions';
+import { changeCurrentPage, getListRepositoriesRequest } from '../../../../actions';
 
 export const Pagination = ({ value }) => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export const Pagination = ({ value }) => {
   createPages(pages, pagesCount, currentPage);
 
   const getRepositories = (page) => {
-    dispatch(getCurrentPage(page));
+    dispatch(changeCurrentPage(page));
     dispatch(getListRepositoriesRequest({
       value,
       currentPage: page,

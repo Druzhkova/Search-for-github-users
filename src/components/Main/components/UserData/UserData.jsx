@@ -27,10 +27,7 @@ export const UserData = ({ data }) => {
               src={iconFollowers}
               alt="Followers"
             />
-            {' '}
-            {followers}
-            {' '}
-            followers
+            {`${followers} followers`}
           </Span>
           {' '}
           <Span>
@@ -38,10 +35,7 @@ export const UserData = ({ data }) => {
               src={iconFollowing}
               alt="Following"
             />
-            {' '}
-            {following}
-            {' '}
-            following
+            {`${following} following`}
           </Span>
         </div>
       </Inner>

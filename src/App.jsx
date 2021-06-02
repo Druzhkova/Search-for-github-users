@@ -15,14 +15,13 @@ function App() {
     userData,
     repositoriesData: listRepositories,
     perPage,
-    currentPage,
     loading,
   } = useSelector((state) => state.searchApp);
 
   const getData = useCallback(() => {
-    dispatch(getListRepositoriesRequest({ value, currentPage, perPage }));
+    dispatch(getListRepositoriesRequest({ value, perPage }));
     dispatch(getUserDataRequest(value));
-  }, [dispatch, value, currentPage, perPage]);
+  }, [dispatch, value, perPage]);
 
   return (
     <>

@@ -20,7 +20,8 @@ export const userDataMiddleware = (store) => (next) => (action) => {
 export const listRepositoriesMiddleware = (store) => (next) => (action) => {
   if (action.type === GET_LIST_REPOSITORIES_REQUEST) {
     const { value, currentPage, perPage } = action.payload;
-    fetch(`https://api.github.com/users/${value}/repos?sort=updated&per_page=${perPage}&page=${currentPage}`)
+
+    fetch(`https://api.github.com/users/${value}/repos?sort=updated&per_page=${perPage}&page=${currentPage || 1}`)
       .then((res) => res.json())
       .then((response) => store.dispatch(getListRepositoriesSuccess(response)))
       .catch((error) => store.dispatch(getListRepositoriesFailure(error)));

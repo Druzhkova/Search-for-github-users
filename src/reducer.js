@@ -5,7 +5,7 @@ import {
   GET_LIST_REPOSITORIES_REQUEST,
   GET_LIST_REPOSITORIES_SUCCESS,
   GET_LIST_REPOSITORIES_FAILURE,
-  GET_CURRENT_PAGE,
+  CHANGE_CURRENT_PAGE,
 } from './actions';
 
 const initialState = {
@@ -27,6 +27,7 @@ export function serchAppReducer(state = initialState, action) {
         ...state,
         userData: action.payload,
         totalCount: action.payload.public_repos,
+        currentPage: 1,
         loading: false,
       };
     }
@@ -36,7 +37,6 @@ export function serchAppReducer(state = initialState, action) {
         ...state,
         loading: true,
         errorMessage: null,
-        currentPage: 1,
       };
     }
 
@@ -72,7 +72,7 @@ export function serchAppReducer(state = initialState, action) {
       };
     }
 
-    case GET_CURRENT_PAGE: {
+    case CHANGE_CURRENT_PAGE: {
       return {
         ...state,
         currentPage: action.payload,

@@ -6,7 +6,7 @@ export const GET_LIST_REPOSITORIES_REQUEST = 'GET_LIST_REPOSITORIES_REQUEST';
 export const GET_LIST_REPOSITORIES_SUCCESS = 'GET_LIST_REPOSITORIES_SUCCESS';
 export const GET_LIST_REPOSITORIES_FAILURE = 'GET_LIST_REPOSITORIES_FAILURE';
 
-export const GET_CURRENT_PAGE = 'GET_CURRENT_PAGE';
+export const CHANGE_CURRENT_PAGE = 'CHANGE_CURRENT_PAGE';
 
 export function getUserDataRequest(query) {
   return {
@@ -50,9 +50,9 @@ export function getListRepositoriesFailure(error) {
   };
 }
 
-export function getCurrentPage(page) {
+export function changeCurrentPage(page) {
   return {
-    type: GET_CURRENT_PAGE,
+    type: CHANGE_CURRENT_PAGE,
     payload: page,
   };
 }
