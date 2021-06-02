@@ -26,8 +26,15 @@ export const Pagination = ({ value }) => {
       perPage,
     }));
   };
+
+  const lastNumber = perPage * currentPage;
+  const firstNumber = lastNumber - (perPage - 1);
   return (
     <Inner>
+      <span>
+        {`${firstNumber} - ${lastNumber > totalCount
+          ? totalCount : lastNumber} of ${totalCount} items`}
+      </span>
       <Arrow
         onClick={() => {
           if (currentPage === 1) {
@@ -67,6 +74,7 @@ export const Pagination = ({ value }) => {
 };
 
 const Inner = styled.div`
+  color: #808080;
   width: 95%;
   display: flex;
   align-items: center;
@@ -75,7 +83,6 @@ const Inner = styled.div`
 `;
 
 const Arrow = styled.span`
-  color: #808080;
   font-size: 14px;
   margin: 0 10px;
   cursor: pointer;
